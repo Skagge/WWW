@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import './Photos.css';
-// import { createClient } from 'pexels';
-//
-// const client = createClient('563492ad6f9170000100000108af6e3a9c7247188e6984c58113ec53');
 
 class Photos extends Component {
 
@@ -74,11 +71,6 @@ class Photos extends Component {
         axios
             .get(
                 `https://jsonplaceholder.typicode.com/photos?_page=${page}&_limit=9`
-                // `https://api.pexels.com/v1/curated?page=${page}&per_page=20`,{
-                //     headers: {
-                //         'Authorization': "563492ad6f9170000100000108af6e3a9c7247188e6984c58113ec53"
-                //     }
-                // }
             )
             .then(res => {
                 this.setState({ photos: [...this.state.photos, ...res.data] });

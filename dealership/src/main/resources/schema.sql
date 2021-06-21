@@ -1,0 +1,16 @@
+CREATE TABLE offices(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    address VARCHAR(200) NULL,
+    owner VARCHAR(90) NULL
+);
+
+CREATE TABLE cars(
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  office_id BIGINT NULL,
+  brand VARCHAR(45) NULL,
+  model VARCHAR(45) NULL,
+  vin VARCHAR(17) NOT NULL UNIQUE,
+  color VARCHAR(45) NULL,
+  power SMALLINT NULL,
+  FOREIGN KEY (office_id) REFERENCES offices(id)
+);
